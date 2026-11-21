@@ -1,0 +1,104 @@
+CS467 MP-A16 - Fitness Workout and Training Plan Recommender - required test cases
+Student: Ha Van Quoc Tien (29211355728), CS467A No. 16
+
+====================================================================================================================
+TEST CASE 1 - Goal query: '20 minute home cardio workout with no equipment'
+====================================================================================================================
+
+  Query       : "20 minute home cardio workout with no equipment"
+  NLP tokens  : ['home', 'cardio', 'bodyweight']
+  Constraints : duration = 20 min, difficulty = None
+  Score       : cosine(query TF-IDF, workout TF-IDF)  ->  0.8*cosine + 0.1*duration_fit + 0.1*level_fit
+
+  Top-5 NLP content-based matches
+    #  ID   Workout                          Level        Min    score  Why (top keywords / evidence)
+    --------------------------------------------------------------------------------------------------------------
+    1  W38  Lunch Break Express Circuit      Intermediate  15    0.296  cardio bodyweight, home, 15 min
+    2  W08  Dance Cardio Party               Beginner      30    0.236  home cardio, bodyweight
+    3  W01  Bodyweight HIIT Blast            Intermediate  20    0.216  bodyweight, home, cardio, 20 min
+    4  W02  Beginner Low-Impact Cardio       Beginner      20    0.209  cardio, bodyweight, home, 20 min
+    5  W41  Stair Climb Cardio               Intermediate  20    0.190  cardio, bodyweight, 20 min
+
+====================================================================================================================
+TEST CASE 2 - Personal history: user U03 rated core and stretching routines highly
+====================================================================================================================
+
+  User U03: 16 rated workouts, mean rating 3.62
+  Highest-rated history:
+    5*  W23 10-Minute Core Crusher           [core;abs;bodyweight;home;yoga_mat]  "Loved it, the core work felt amazing."
+    5*  W24 Pilates Core Foundations         [core;abs;posture;pilates;yoga_mat;home]  "Awesome workout, felt energized after."
+    5*  W29 Full-Body Stretching Routine     [flexibility;stretching;full_body;yoga_mat;recovery;home]  "Perfect for my goals, the flexibility work was spot on."
+    5*  W28 Hanging Leg Raise Abs            [core;abs;pull_up_bar;strength]  "Great flow and the core work was exactly what I needed."
+    5*  W42 Core and Stretch Combo           [core;abs;stretching;flexibility;yoga_mat;home]  "Great flow and the core work was exactly what I needed."
+    5*  W30 Morning Yoga Flow                [yoga;flexibility;core;balance;yoga_mat;home]  "Awesome workout, felt energized after."
+  Lowest-rated:
+    2*  W40 Senior Balance and Strength      [balance;legs;core;resistance_band;low_impact;home]
+    1*  W09 Easy Morning Jog                 [cardio;legs;running;outdoor;endurance]
+    1*  W10 5K Tempo Run                     [cardio;legs;running;outdoor;endurance]
+  Profile top terms (rating-weighted TF-IDF): yoga_mat, abs, flexibility, core, stretching, core abs, yoga_mat home, home
+  Most similar users (CF): U10 (0.76), U14 (0.65), U11 (0.64)
+
+  NLP content-based (cosine with user profile)
+    #  ID   Workout                          Level        Min   cosine  Why (top keywords / evidence)
+    --------------------------------------------------------------------------------------------------------------
+    1  W32  Post-Run Cooldown Stretch        Beginner      10    0.127  stretching, flexibility, recovery
+    2  W25  Plank Variations Challenge       Intermediate  15    0.127  core, plank, home
+    3  W31  Hip Mobility for Desk Workers    Beginner      15    0.117  stretching, yoga_mat, hip
+    4  W26  Lower Back and Core Stability    Beginner      20    0.112  core, yoga_mat, bodyweight
+    5  W16  Glute Bridge and Leg Burner      Beginner      20    0.088  home, bodyweight home, home beginner
+
+  User-based collaborative filtering (predicted rating)
+    #  ID   Workout                          Level        Min     pred  Why (top keywords / evidence)
+    --------------------------------------------------------------------------------------------------------------
+    1  W26  Lower Back and Core Stability    Beginner      20    4.577  liked by similar users U11(5*), U12(5*)
+    2  W32  Post-Run Cooldown Stretch        Beginner      10    4.246  liked by similar users U06(5*), U04(5*), U09(4*)
+    3  W20  Machine Circuit for Beginners    Beginner      35    4.112  liked by similar users U10(4*), U14(4*), U04(5*)
+    4  W16  Glute Bridge and Leg Burner      Beginner      20    4.052  liked by similar users U10(5*), U11(4*), U07(3*)
+    5  W25  Plank Variations Challenge       Intermediate  15    4.050  liked by similar users U14(4*), U11(4*), U12(3*)
+
+  Hybrid 0.5*CF + 0.5*content (normalised)
+    #  ID   Workout                          Level        Min   hybrid  Why (top keywords / evidence)
+    --------------------------------------------------------------------------------------------------------------
+    1  W26  Lower Back and Core Stability    Beginner      20    0.940  CF 4.58*, content 0.11 (core, yoga_mat)
+    2  W32  Post-Run Cooldown Stretch        Beginner      10    0.894  CF 4.25*, content 0.13 (stretching, flexibility)
+    3  W25  Plank Variations Challenge       Intermediate  15    0.833  CF 4.05*, content 0.13 (core, plank)
+    4  W16  Glute Bridge and Leg Burner      Beginner      20    0.676  CF 4.05*, content 0.09 (home, bodyweight home)
+    5  W31  Hip Mobility for Desk Workers    Beginner      15    0.611  CF 3.47*, content 0.12 (stretching, yoga_mat)
+
+  Popularity baseline (Bayesian avg, >= 3 ratings)
+    #  ID   Workout                          Level        Min    bayes  Why (top keywords / evidence)
+    --------------------------------------------------------------------------------------------------------------
+    1  W01  Bodyweight HIIT Blast            Intermediate  20    3.797  avg 4.00 from 6 ratings
+    2  W16  Glute Bridge and Leg Burner      Beginner      20    3.686  avg 3.83 from 6 ratings
+    3  W12  Push-Up Progression Upper Body   Beginner      20    3.596  avg 3.75 from 4 ratings
+    4  W03  Jump Rope Fat Burner             Intermediate  15    3.596  avg 3.75 from 4 ratings
+    5  W25  Plank Variations Challenge       Intermediate  15    3.575  avg 3.67 from 6 ratings
+
+====================================================================================================================
+TEST CASE 3 - Cold start: brand-new user with only a 1-sentence fitness goal
+====================================================================================================================
+
+  New user goal : "I'm a beginner with a stiff lower back and I want to get more flexible."
+  NLP tokens    : ['beginner', 'stiff', 'lower_back', 'flexibility']
+  Constraints   : duration = None min, difficulty = Beginner
+  Score         : 0.85 * query match + 0.15 * popularity prior (no rating history needed)
+
+  Cold-start Top-5
+    #  ID   Workout                          Level        Min    score  Why (top keywords / evidence)
+    --------------------------------------------------------------------------------------------------------------
+    1  W26  Lower Back and Core Stability    Beginner      20    0.370  lower_back, beginner | pop 4.03
+    2  W29  Full-Body Stretching Routine     Beginner      20    0.285  flexibility, beginner | pop 3.80
+    3  W31  Hip Mobility for Desk Workers    Beginner      15    0.278  lower_back, beginner | pop 2.90
+    4  W42  Core and Stretch Combo           Beginner      30    0.276  flexibility, beginner | pop 4.02
+    5  W35  Bedtime Relaxation Stretch       Beginner      15    0.272  flexibility, beginner | pop 3.88
+
+  For comparison, a new user gets only this from the popularity baseline:
+
+  Popularity baseline (no personalisation)
+    #  ID   Workout                          Level        Min    bayes  Why (top keywords / evidence)
+    --------------------------------------------------------------------------------------------------------------
+    1  W42  Core and Stretch Combo           Beginner      30    4.019  avg 4.33 from 6 ratings
+    2  W35  Bedtime Relaxation Stretch       Beginner      15    3.882  avg 4.25 from 4 ratings
+    3  W01  Bodyweight HIIT Blast            Intermediate  20    3.797  avg 4.00 from 6 ratings
+    4  W29  Full-Body Stretching Routine     Beginner      20    3.797  avg 4.00 from 6 ratings
+    5  W08  Dance Cardio Party               Beginner      30    3.771  avg 4.00 from 5 ratings
