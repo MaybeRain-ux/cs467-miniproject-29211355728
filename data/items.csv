@@ -1,0 +1,43 @@
+item_id,workout_name,difficulty,duration_min,description,target_muscles_tags
+W01,Bodyweight HIIT Blast,Intermediate,20,"Fast-paced interval circuit of burpees, jump squats and mountain climbers done at home with no equipment to spike your heart rate and burn calories.",full_body;cardio;hiit;bodyweight;home
+W02,Beginner Low-Impact Cardio,Beginner,20,"Gentle marching, step-touches and arm circles that raise heart rate without jumping; ideal for small apartments and sensitive knees.",cardio;low_impact;bodyweight;home;full_body
+W03,Jump Rope Fat Burner,Intermediate,15,"Short skipping intervals with double-unders and high knees to improve coordination, footwork and cardio endurance.",cardio;calves;shoulders;jump_rope;hiit
+W04,Tabata Sprint Intervals,Advanced,16,"Eight rounds of 20 seconds all-out sprints and skaters followed by 10 seconds rest for maximum conditioning.",cardio;hiit;legs;bodyweight;outdoor
+W05,Treadmill Incline Walk,Beginner,30,"Steady uphill walking on a treadmill that builds an aerobic base and strengthens glutes and calves with minimal joint stress.",cardio;glutes;calves;treadmill;gym;low_impact
+W06,Indoor Cycling Endurance Ride,Intermediate,45,"Structured stationary bike session with seated climbs and steady tempo blocks to build leg endurance and stamina.",cardio;quads;endurance;stationary_bike;gym
+W07,Rowing Machine Power Intervals,Advanced,25,"Hard 500 meter rowing repeats that work the back, legs and arms while pushing your anaerobic threshold.",cardio;back;legs;rowing_machine;hiit;gym
+W08,Dance Cardio Party,Beginner,30,"Fun choreography-based dance moves set to upbeat music for a joyful full-body sweat in your living room.",cardio;full_body;bodyweight;home;fun
+W09,Easy Morning Jog,Beginner,25,"Relaxed conversational-pace run outdoors to wake up the body and build a consistent running habit.",cardio;legs;running;outdoor;endurance
+W10,5K Tempo Run,Advanced,40,"Threshold running workout with a warm-up, sustained tempo kilometers and a cool-down to improve race pace.",cardio;legs;running;outdoor;endurance
+W11,Dumbbell Full-Body Strength,Intermediate,40,"Compound dumbbell moves such as goblet squats, rows, presses and lunges for balanced muscle building.",full_body;strength;dumbbells;home;gym
+W12,Push-Up Progression Upper Body,Beginner,20,"Incline, knee and standard push-up variations plus chair triceps dips to build chest and arm strength without equipment.",chest;triceps;shoulders;bodyweight;home;strength
+W13,Barbell Squat and Deadlift Day,Advanced,60,"Heavy barbell back squats and conventional deadlifts with progressive working sets for lower-body power.",legs;glutes;hamstrings;back;barbell;gym;strength
+W14,Kettlebell Swing Circuit,Intermediate,25,"Explosive kettlebell swings, cleans and goblet squats that train the posterior chain and boost conditioning.",glutes;hamstrings;core;kettlebell;hiit;full_body
+W15,Resistance Band Upper Body,Beginner,25,"Band rows, pull-aparts, chest presses and biceps curls for travel-friendly upper body toning.",back;chest;arms;shoulders;resistance_band;home;travel
+W16,Glute Bridge and Leg Burner,Beginner,20,"Glute bridges, wall sits, reverse lunges and calf raises to strengthen the legs at home without weights.",glutes;legs;quads;bodyweight;home
+W17,Pull-Up Bar Back Builder,Advanced,30,"Pull-ups, chin-ups, hanging rows and scapular pulls to develop a strong and wide back.",back;biceps;pull_up_bar;strength
+W18,Bench Press Chest Day,Intermediate,50,"Flat and incline barbell bench press finished with dumbbell flyes to grow the chest and triceps in the gym.",chest;triceps;shoulders;barbell;bench;gym;strength
+W19,Dumbbell Shoulder Sculpt,Intermediate,30,"Overhead presses, lateral raises and rear delt flyes for rounded, stable shoulders.",shoulders;arms;dumbbells;strength
+W20,Machine Circuit for Beginners,Beginner,35,"Guided gym machine circuit with leg press, lat pulldown and chest press for safe first-time strength training.",full_body;strength;machines;gym
+W21,Bulgarian Split Squat Leg Day,Advanced,45,"Single-leg dumbbell split squats, step-ups and Romanian deadlifts to fix imbalances and build leg strength.",legs;glutes;quads;hamstrings;dumbbells;bench;strength
+W22,Arm Day Biceps and Triceps,Intermediate,30,"Curls, hammer curls, skull crushers and overhead extensions to build arm size and definition.",arms;biceps;triceps;dumbbells;strength
+W23,10-Minute Core Crusher,Intermediate,10,"Plank holds, bicycle crunches and leg raises in a quick abs finisher you can do anywhere.",core;abs;bodyweight;home;yoga_mat
+W24,Pilates Core Foundations,Beginner,30,"Controlled Pilates mat exercises like the hundred, roll-ups and single-leg stretch to build deep core strength and better posture.",core;abs;posture;pilates;yoga_mat;home
+W25,Plank Variations Challenge,Intermediate,15,"Side planks, plank jacks, shoulder taps and forearm planks to build anti-rotation core stability.",core;obliques;shoulders;bodyweight;home
+W26,Lower Back and Core Stability,Beginner,20,"Bird dogs, dead bugs and glute bridges to protect the lower back and improve trunk control.",core;lower_back;glutes;bodyweight;rehab;yoga_mat
+W27,Medicine Ball Rotational Core,Advanced,25,"Medicine ball slams, Russian twists and wood chops for powerful rotational strength.",core;obliques;medicine_ball;gym;power
+W28,Hanging Leg Raise Abs,Advanced,20,"Hanging knee raises, toes-to-bar and L-sits on a pull-up bar for advanced abdominal strength.",core;abs;pull_up_bar;strength
+W29,Full-Body Stretching Routine,Beginner,20,"Slow static stretches for hamstrings, hips, chest and shoulders to relax tight muscles and improve flexibility.",flexibility;stretching;full_body;yoga_mat;recovery;home
+W30,Morning Yoga Flow,Beginner,25,"Gentle sun salutations and standing poses to wake up the body, improve balance and calm the mind.",yoga;flexibility;core;balance;yoga_mat;home
+W31,Hip Mobility for Desk Workers,Beginner,15,"Hip flexor stretches, 90/90 switches and pigeon pose to undo stiffness from sitting all day.",hips;mobility;stretching;lower_back;yoga_mat;office
+W32,Post-Run Cooldown Stretch,Beginner,10,"Calf, quad, hamstring and IT band stretches after running to speed recovery and reduce soreness.",legs;stretching;recovery;flexibility;running
+W33,Foam Rolling Recovery Session,Beginner,20,"Self-myofascial release with a foam roller on the back, quads, calves and glutes for active recovery days.",recovery;mobility;foam_roller;full_body
+W34,Power Yoga Strength Flow,Intermediate,45,"Dynamic vinyasa flow with chaturangas, warrior holds and arm balances that builds strength and flexibility.",yoga;core;shoulders;flexibility;strength;yoga_mat
+W35,Bedtime Relaxation Stretch,Beginner,15,"Restful floor stretches and deep breathing to release tension and improve sleep quality.",stretching;flexibility;relaxation;recovery;yoga_mat;home
+W36,Shoulder and Upper Back Mobility,Beginner,15,"Band dislocates, thoracic rotations and wall slides to improve posture and overhead range of motion.",shoulders;upper_back;mobility;posture;resistance_band
+W37,Deep Flexibility Splits Training,Advanced,40,"Long-hold PNF stretching for hamstrings and hip flexors progressing toward front and middle splits.",flexibility;stretching;hips;hamstrings;yoga_mat
+W38,Lunch Break Express Circuit,Intermediate,15,"Quick circuit of squats, push-ups and jumping jacks with no equipment to fit a workout into a busy day.",full_body;cardio;bodyweight;home;office;quick
+W39,CrossFit Style WOD,Advanced,35,"High-intensity mix of thrusters, box jumps, kettlebell swings and burpees for total-body conditioning.",full_body;hiit;cardio;kettlebell;barbell;gym
+W40,Senior Balance and Strength,Beginner,25,"Chair-supported squats, heel-to-toe walks and light band work to improve balance and help prevent falls.",balance;legs;core;resistance_band;low_impact;home
+W41,Stair Climb Cardio,Intermediate,20,"Repeated stair climbs and step-ups for a leg-burning cardio session using any staircase.",cardio;legs;glutes;bodyweight;outdoor
+W42,Core and Stretch Combo,Beginner,30,"Half core work with dead bugs and planks, half gentle stretching to strengthen and lengthen the whole body.",core;abs;stretching;flexibility;yoga_mat;home
